@@ -18,4 +18,8 @@ public class SampleTests {
     public void test4(){
         System.out.println("This is fourth test");
     }
+    @Test
+    public void test5(){
+        System.out.println("This is fifth test");
+    }
 }
