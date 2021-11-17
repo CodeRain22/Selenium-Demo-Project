@@ -1,4 +1,5 @@
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class SampleTests {
@@ -21,5 +22,6 @@ public class SampleTests {
     @Test
     public void test5(){
         System.out.println("This is fifth test");
+        Assert.assertTrue(false);
     }
 }

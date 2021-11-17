@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -40,7 +40,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-SampleTest" class="navigator-link">
-              <span class="suite-name border-passed">SampleTest</span>
+              <span class="suite-name border-failed">SampleTest</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -51,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-SampleTest" class="navigator-link ">
-                    <span>C:\Users\bhava\Desktop\Automation testing Learning\Demo Projects\Selenium-Maven-TestNG-Git-Jenkins\src\test\resources\tests.xml</span>
+                    <span>C:\Users\bhava\Desktop\Automation testing Learning\Demo Projects\Selenium-Demo-Project\Selenium-Maven-TestNG-Git-Jenkins\src\test\resources\tests.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -93,7 +93,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">4 methods,   4 passed</span>
+                    <span class="method-stats">5 methods, 1 failed,   4 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-SampleTest" class="hide-methods failed suite-SampleTest"> (hide)</a> <!-- hide-methods failed suite-SampleTest -->
+                      <a href="#" panel-name="suite-SampleTest" class="show-methods failed suite-SampleTest"> (show)</a> <!-- show-methods failed suite-SampleTest -->
+                    </span>
+                    <div class="method-list-content failed suite-SampleTest">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-SampleTest" title="SampleTests" class="method navigator-link" hash-for-method="test5">test5</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-SampleTest -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -134,6 +148,26 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-SampleTest" class="panel SampleTest">
+          <div class="suite-SampleTest-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">SampleTests</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="test5">
+                  </a> <!-- test5 -->
+                  <span class="method-name">test5</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
+	at SampleTests.test5(SampleTests.java:25)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+... Removed 35 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-SampleTest-class-failed -->
           <div class="suite-SampleTest-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -173,7 +207,7 @@
         </div> <!-- panel SampleTest -->
         <div panel-name="test-xml-SampleTest" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\bhava\Desktop\Automation testing Learning\Demo Projects\Selenium-Maven-TestNG-Git-Jenkins\src\test\resources\tests.xml</span>
+            <span class="header-content">C:\Users\bhava\Desktop\Automation testing Learning\Demo Projects\Selenium-Demo-Project\Selenium-Maven-TestNG-Git-Jenkins\src\test\resources\tests.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -222,28 +256,32 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(4);
+data.addRows(5);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'test1')
 data.setCell(0, 2, 'SampleTests')
-data.setCell(0, 3, 8);
+data.setCell(0, 3, 10);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'test3')
+data.setCell(1, 1, 'test5')
 data.setCell(1, 2, 'SampleTests')
-data.setCell(1, 3, 1);
+data.setCell(1, 3, 5);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'test2')
+data.setCell(2, 1, 'test3')
 data.setCell(2, 2, 'SampleTests')
 data.setCell(2, 3, 1);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'test4')
+data.setCell(3, 1, 'test2')
 data.setCell(3, 2, 'SampleTests')
 data.setCell(3, 3, 0);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'test4')
+data.setCell(4, 2, 'SampleTests')
+data.setCell(4, 3, 0);
 window.suiteTableData['SampleTest']= { tableData: data, tableDiv: 'times-div-SampleTest'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 10 ms</span>
+              <span class="suite-total-time">Total running time: 16 ms</span>
               <div id="times-div-SampleTest">
               </div> <!-- times-div-SampleTest -->
             </div> <!-- times-div -->
@@ -276,15 +314,21 @@ return data;
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">test2</span>
-                <span class="method-start">11 ms</span>
+                <span class="method-start">13 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">test3</span>
-                <span class="method-start">12 ms</span>
+                <span class="method-start">14 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">test4</span>
-                <span class="method-start">13 ms</span>
+                <span class="method-start">18 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">test5</span>
+                <span class="method-start">19 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
